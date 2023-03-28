@@ -1,0 +1,331 @@
+//Q1
+import 'dart:io';
+
+class Lampada{
+  String estado='';
+  void ascender(int C1){
+    if(C1==1){
+      estado='ASCESA';
+    }
+  }
+  void apagar(int C1){
+    if(C1==2){
+      estado='APAGADA';
+    }
+  }
+}
+
+void main(){
+  Lampada interrupitor=Lampada();
+  print('Digite (1) para ascender a Lampada e (2) para apaga-la');
+  String? input=stdin.readLineSync();
+  int inte=int.parse(input!);
+
+  interrupitor.apagar(inte);
+  interrupitor.ascender(inte);
+
+  print('A sua Lampada esta: ${interrupitor.estado}');
+}
+
+//Q2
+
+import 'dart:io';
+//Declaração da Classe e método
+class Banco{
+  String numero='';
+  double saldo=0.0;
+  void deposito(double C1){
+    saldo=saldo+C1;
+  }
+  void saque(double C1){
+    saldo=saldo-C1;
+  }
+}
+
+void main(){
+
+//Criação do Objeto e Input
+  Banco cliente=Banco();
+  print('Digite o número da sua conta:');
+  String? nu=stdin.readLineSync();
+  cliente.numero=nu!;
+  print('Digite (1)para deposito ou (2)saque se desejar:');
+  String? input=stdin.readLineSync();
+  int C=int.parse(input!);
+  
+  //Atribuição de valores
+  if(C==1){
+    print('Digite o valor do seu Deposito:');
+    String? input_2=stdin.readLineSync();
+    double C_2=double.parse(input_2!);
+    cliente.deposito(C_2);
+  }
+    if(C==2){
+    print('Digite o valor do seu Saque:');
+    String? input_2=stdin.readLineSync();
+    double C_2=double.parse(input_2!);
+    cliente.saque(C_2);
+  }
+
+  print('O numero da sua conta: ${cliente.numero}\n O seu Saldo(ATUAL): ${cliente.saldo}');
+}
+
+//Q3
+import 'dart:io';
+import 'dart:math';
+//Declaração da classe
+class Cartesiano{
+  double x= 0.0;
+  double y= 0.0;
+
+  double distancia(){
+    double d= sqrt((x*x)+(y*y));
+    return d;
+  }
+}
+void main(){
+//Declaração do Objeto
+  Cartesiano ponto=Cartesiano();
+  double dis=0.0;
+
+//print com input's
+  print('Digite os pontos X e Y especificamente e saiba a distancia deles até o ponto de origem:');
+  String? input=stdin.readLineSync();
+  String? input_2=stdin.readLineSync();
+  double p1=double.parse(input!);
+  double p2=double.parse(input_2!);
+
+//Atribuição de valores aos objetos
+  ponto.x=p1;
+  ponto.y=p2;
+  dis=ponto.distancia();
+//print do resultado
+  print('A sua distancia e: $dis');
+}
+
+//Q4
+import 'dart:io';
+//Declaração da classe
+class Cartesiano{
+  double x= 0.0;
+  double y= 0.0;
+
+  String parenteses(){
+    String p= '($x,$y)';
+    return p;
+  }
+
+}
+void main(){
+//Declaração do Objeto
+  Cartesiano ponto=Cartesiano();
+  String dis='';
+
+//print com input's
+  print('Digite os pontos X e Y especificamente e saiba a distancia deles até o ponto de origem:');
+  String? input=stdin.readLineSync();
+  String? input_2=stdin.readLineSync();
+  double p1=double.parse(input!);
+  double p2=double.parse(input_2!);
+
+//Atribuição de valores aos objetos
+  ponto.x=p1;
+  ponto.y=p2;
+  dis=ponto.parenteses();
+
+//print do resultado
+  print('A sua distancia e: $dis');
+}
+
+//Q5
+import 'dart:io';
+import 'dart:math';
+//Declaração da classe
+class Cartesiano{
+  double x= 0.0;
+  double y= 0.0;
+
+  double distancia(){
+    double d= sqrt((x*x)+(y*y));
+    return d;
+  }
+}
+void main(){
+//Declaração do Objeto
+  Cartesiano ponto=Cartesiano();
+  Cartesiano ponto_2=Cartesiano();
+  double dis=0.0;
+  double dis_2=0.0;
+
+//print com input's
+  print('Digite os pontos X e Y especificamente e saiba a distancia deles até o ponto de origem:');
+  String? input=stdin.readLineSync();
+  String? input_2=stdin.readLineSync();
+  double p1=double.parse(input!);
+  double p2=double.parse(input_2!);
+  print('Digite os pontos X e Y especificamente e saiba a distancia deles até o ponto de origem:');
+  String? input_3=stdin.readLineSync();
+  String? input_4=stdin.readLineSync();
+  double p3=double.parse(input_3!);
+  double p4=double.parse(input_4!);
+
+//Atribuição de valores aos objetos
+  ponto.x=p1;
+  ponto.y=p2;
+  dis=ponto.distancia();
+  ponto_2.x=p3;
+  ponto_2.y=p4;
+  dis_2=ponto_2.distancia();
+//print do resultado
+  if(dis>dis_2){
+    print('A o ponto mais distante eh: $dis (${ponto.x},${ponto.y})');
+  }
+  if(dis_2>dis){
+    print('A o ponto mais distante eh: $dis_2 (${ponto_2.x},${ponto_2.y})');
+  }
+  if(dis==dis_2){
+    print('Os pontos estão na mesma distância');
+  }
+}
+
+//Q6
+import 'dart:io';
+
+//Declaração da classe e métodos
+class Carro{
+  int dis=0;
+  int com=0;
+  void avancar(){
+    dis=dis+5;
+    com=com-5;
+  }
+  void abastecer(int ab){
+    com=com+ab;
+  }
+}
+
+void main(){
+
+//Declaração das variáveis e input's
+  int i=0;
+  int a=0;
+  int abs=0;
+  int abs_2=0;
+  Carro c1=Carro();
+  Carro c2=Carro();
+  print('Digite a distância da largada que o carro 1 esta e seu combustível:');
+  String? input=stdin.readLineSync();
+  String? input_2=stdin.readLineSync();
+  int d1=int.parse(input!);
+  int co1=int.parse(input_2!);
+  print('Digite a distância da largada que o carro 2 esta e seu combustível:');
+  String? input_3=stdin.readLineSync();
+  String? input_4=stdin.readLineSync();
+  int d2=int.parse(input_3!);
+  int co2=int.parse(input_4!);
+
+//Atribuições de valores
+  c1.dis=d1;
+  c1.com=co1;
+  c2.dis=d2;
+  c2.com=co2;
+
+//Array
+  while(i!=1){
+    print('Primeiro carro: dis:${c1.dis}\nCombustivel: ${c1.com};\nSegundo carro: dis: ${c2.dis} \nCombusível: ${c2.com}');
+    
+    print('Digite (1) se o carro 1 vai andar:');
+    String? ava=stdin.readLineSync();
+    a=int.parse(ava!);
+    if(a==1 & c1.com>=5){
+      c1.avancar();
+    }
+    
+    print('Digite a distância que o carro 2 vai andar:');
+    String? ava_2=stdin.readLineSync();
+    a=int.parse(ava_2!);
+    if(a==1 & c2.com>=5){
+      c2.avancar();
+    }
+    
+    print('Digite um valor para abastecer o primeiro carro (Caso queira):');
+    String? input_5=stdin.readLineSync();
+    abs=int.parse(input_5!);
+    c1.abastecer(abs);
+    
+    print('Digite um valor para abastecer o segundo carro (Caso queira):');
+    String? input_6=stdin.readLineSync();
+    abs_2=int.parse(input_6!);
+    c1.abastecer(abs_2);
+    
+    print('Se deseja parar digite (1) caso não, digite diferente de (1):');
+    String? input_7=stdin.readLineSync();
+    i=int.parse(input_7!);
+  }
+  print('FIM DO PROGRAMA!!');
+}
+
+//Q7
+import 'dart:io';
+
+class Aluno{
+  String mat='';
+  double nota=0.0;
+}
+
+void main(){
+  Aluno a=Aluno();
+  print('Digite sua matricula:');
+  String? input=stdin.readLineSync();
+  a.mat=input!;
+  print('Digite a sua nota:');
+  String? input_2=stdin.readLineSync();
+  double no=double.parse(input_2!);
+  a.nota=no;
+  print('Matricula: ${a.mat}, Nota: ${a.nota}');
+}
+
+//Q8
+import 'dart:io';
+
+//Declaração da Classe e métodos
+class Aluno{
+  String mat='';
+  List<double> nota=[];
+
+  void adicionar(double not){
+    nota.add(not);
+  }
+
+  double media(){
+    double sOmaNotas=0.0;
+    double medi=0.0;
+    for(int i=0;i<nota.length;i++){
+    sOmaNotas=sOmaNotas+nota[i];
+    }
+    medi=sOmaNotas/nota.length;
+    return medi;
+  }
+}
+
+void main(){
+
+//CRIAÇÃO DE VARIÁVEIS
+  Aluno a=Aluno();
+  int i=0;
+  print('Digite sua matricula:');
+  String? input=stdin.readLineSync();
+  a.mat=input!;
+
+//ATRIBUIÇÃO DE VALORES
+  while(i!=1){
+    print('Digite a sua nota:');
+    String? input_2=stdin.readLineSync();
+    double not=double.parse(input_2!);
+    a.adicionar(not);
+    print('Digite (1) para parar:');
+    String? input_3=stdin.readLineSync();
+    i=int.parse(input_3!);
+  }
+  print('Matricula: ${a.mat}, Notas: ${a.nota}, Media: ${a.media()}');
+}
